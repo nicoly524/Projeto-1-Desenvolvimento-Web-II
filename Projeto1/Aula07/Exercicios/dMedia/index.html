@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Média de 10 Números</title>
+</head>
+<body>
+  <h2>Digite 10 números</h2>
+  <form id="formulario">
+    <div id="inputs"></div>
+    <button type="submit">Calcular Média</button>
+  </form>
+  <p id="resultado"></p>
+
+  <script>
+    const form = document.getElementById('formulario');
+    const inputsDiv = document.getElementById('inputs');
+    const resultado = document.getElementById('resultado');
+
+    // Criar 10 campos de entrada
+    for (let i = 1; i <= 10; i++) {
+      inputsDiv.innerHTML += `<label>Número ${i}: <input type="number" name="numero${i}" required step="any"></label><br>`;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede recarregar a página
+
+      let soma = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const valor = parseFloat(form[`numero${i}`].value);
+        soma += valor;
+      }
+
+      const media = soma / 10;
+      resultado.textContent = `A média dos números é: ${media}`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma até N</title>
+</head>
+
+<body>
+  <h2>Somar de 1 até um número</h2>
+  <form id="formulario">
+    <label>Digite um número inteiro: <input type="number" id="numero" required></label>
+    <br><br>
+    <button type="submit">Calcular Soma</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+    const resultado = document.getElementById('resultado');
+
+    formulario.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const numero = parseInt(document.getElementById('numero').value);
+      let soma = 0;
+
+      for (let contador = 1; contador <= numero; contador++) {
+        soma += contador;
+      }
+
+      resultado.textContent = `A soma de 1 até ${numero} é: ${soma}`;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulação de Eleição</title>
+</head>
+
+<body>
+  <h2>Simulação de Eleição</h2>
+  <p>1 - Candidato A<br>2 - Candidato B<br>3 - Branco<br>Outro número - Nulo<br>0 - Encerrar</p>
+
+  <input type="number" id="voto" placeholder="Digite seu voto">
+  <button onclick="registrarVoto()">Votar</button>
+  <button onclick="encerrarVotacao()">Encerrar Votação</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    let candidatoA = 0, candidatoB = 0, brancos = 0, nulos = 0;
+    let totalVotos = 0;
+    let votacaoEncerrada = false;
+
+    function registrarVoto() {
+      if (votacaoEncerrada) return;
+
+      const voto = parseInt(document.getElementById('voto').value);
+      document.getElementById('voto').value = "";
+
+      switch (voto) {
+        case 0:
+          encerrarVotacao();
+          break;
+        case 1:
+          candidatoA++;
+          break;
+        case 2:
+          candidatoB++;
+          break;
+        case 3:
+          brancos++;
+          break;
+        default:
+          nulos++;
+      }
+    }
+
+    function encerrarVotacao() {
+      votacaoEncerrada = true;
+      totalVotos = candidatoA + candidatoB + brancos + nulos;
+
+      let resultado = "<h3>Resultado Final:</h3>";
+      if (totalVotos > 0) {
+        const porA = ((candidatoA * 100) / totalVotos).toFixed(2);
+        const porB = ((candidatoB * 100) / totalVotos).toFixed(2);
+        const porBrancos = ((brancos * 100) / totalVotos).toFixed(2);
+        const porNulos = ((nulos * 100) / totalVotos).toFixed(2);
+
+        resultado += `Total de votos: ${totalVotos}<br><br>`;
+        resultado += `Candidato A: ${candidatoA} voto(s) - ${porA}%<br>`;
+        resultado += `Candidato B: ${candidatoB} voto(s) - ${porB}%<br>`;
+        resultado += `Brancos: ${brancos} voto(s) - ${porBrancos}%<br>`;
+        resultado += `Nulos: ${nulos} voto(s) - ${porNulos}%<br>`;
+      } else {
+        resultado += "Nenhum voto registrado.";
+      }
+
+      document.getElementById("resultado").innerHTML = resultado;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de Triângulo</title>
+</head>
+
+<body>
+    <h2>Descubra o tipo de triângulo</h2>
+
+    <label>Lado A:</label>
+    <input type="number" id="ladoA"><br><br>
+
+    <label>Lado B:</label>
+    <input type="number" id="ladoB"><br><br>
+
+    <label>Lado C:</label>
+    <input type="number" id="ladoC"><br><br>
+
+    <button onclick="verificarTriangulo()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarTriangulo() {
+            // pega os valores dos lados
+            let a = parseInt(document.getElementById("ladoA").value);
+            let b = parseInt(document.getElementById("ladoB").value);
+            let c = parseInt(document.getElementById("ladoC").value);
+            let resultado = "";
+
+            // verifica se é um triângulo válido
+            if (a + b > c && a + c > b && b + c > a) {
+                if (a === b && b === c) {
+                    resultado = "Esse triângulo é Equilátero.";
+                } else if (a === b || b === c || a === c) {
+                    resultado = "Esse triângulo é Isósceles.";
+                } else {
+                    resultado = "Esse triângulo é Escaleno.";
+                }
+            } else {
+                resultado = "Os lados informados não formam um triângulo.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+
+</html>

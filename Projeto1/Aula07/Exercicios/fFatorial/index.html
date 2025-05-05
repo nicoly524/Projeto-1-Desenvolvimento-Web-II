@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatorial com While</title>
+</head>
+
+<body>
+  <h2>Calcular Fatorial</h2>
+  <form id="formulario">
+    <label>Digite um número:
+      <input type="number" id="numero" min="0" required>
+    </label>
+    <br><br>
+    <button type="submit">Calcular</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+    const resultado = document.getElementById('resultado');
+
+    formulario.addEventListener('submit', function(evento) {
+      evento.preventDefault(); 
+
+      let numero = parseInt(document.getElementById('numero').value);
+      let atual = 1;
+      let fatorial = 1;
+
+      while (atual <= numero) {
+        fatorial *= atual; 
+        atual++;
+      }
+
+      resultado.textContent = `O fatorial de ${numero} é: ${fatorial}`;
+    });
+  </script>
+</body>
+
+</html>

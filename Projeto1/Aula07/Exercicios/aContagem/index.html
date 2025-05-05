@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 5em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="contador">10</h1>
+
+    <script>
+        let contador = 10;
+        const elemento = document.getElementById("contador");
+
+        // O setInterval executa uma função a cada intervalo de tempo, 1000 = 1 segundo
+        const intervalo = setInterval(function () {
+            if (contador > 0) {
+                elemento.textContent = contador;
+                contador--;
+            } else {
+                clearInterval(intervalo);
+                elemento.textContent = "Booom!";
+            }
+        }, 1000); 
+        // 1000 milisegundos equivalem a 1 segundo
+    </script>
+
+</body>
+</html>
