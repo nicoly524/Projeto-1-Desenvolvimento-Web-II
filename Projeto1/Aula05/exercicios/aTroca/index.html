@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca Variáveis</title>
+</head>
+
+<body>
+    <h1>Troca de variáveis</h1>
+    <br>
+    <button onclick="trocar()">Trocar valores</button>
+    <br><br>
+    <p id="normal"></p>
+    <p id="trocado"></p>
+
+    <script>
+        function trocar() {
+        let a = parseInt(prompt("Digite um valor para A: "));
+        let b = parseInt(prompt("Digite um valor para B: "));
+        
+        document.getElementById("normal").innerText = `Valores normais: A = ${a} | B = ${b}`;
+        
+        let trocada = a;
+        a = b;
+        b = trocada;
+       
+        document.getElementById("trocado").innerText = `Valores trocados: A = ${a} | B = ${b}`;
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

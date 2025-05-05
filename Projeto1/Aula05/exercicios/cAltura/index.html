@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Altura</title>
+</head>
+
+<body>
+    <h1>Média de alturas</h1>
+    <br>
+    <button onclick="mediaAltura()">Calcular média</button>
+    <br><br>
+    <p>A média das alturas é: <span id="media"></span> metros.</p>
+
+    <script>
+        function mediaAltura() {
+            let altUm, altDois, altTres, media;
+
+            altUm = parseFloat(prompt("Digite a altura da primeira pessoa: "));
+            altDois = parseFloat(prompt("Digite a altura da segunda pessoa: "));
+            altTres = parseFloat(prompt("Digite a altura da terceira pessoa: "));
+
+            if (altUm <= 0.5 || altDois <= 0.5 || altTres <= 0.5 ||
+                altUm > 2.2 || altDois > 2.2 || altTres > 2.2) {
+                alert("Alguma das alturas digitadas é inválida. Digite uma altura entre o.50 e 2.20 metros.)");
+                return;
+            }
+
+            media = (altUm + altDois + altTres) / 3;
+
+            document.getElementById("media").innerText = media;
+        }
+    </script>
+</body>
+
+</html>

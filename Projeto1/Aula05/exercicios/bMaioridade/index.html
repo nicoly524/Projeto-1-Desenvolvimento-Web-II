@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maioridade Penal</title>
+</head>
+
+<body>
+    <h1>Maioridade</h1>
+    <br>
+    <button onclick="verificarMaioridade()">Consultar maioridade</button>
+    <br><br>
+    <p id="soun"></p>
+
+    <script>
+        function verificarMaioridade() {
+        const maioridade = 18;
+        let idade = parseInt(prompt("Digite sua idade: "));
+        let adultoounao = "";
+
+        let anos = maioridade - idade;
+        if (anos > 0) {
+            adultoounao = `Falta(m) ${anos} ano(s) para você se tornar um adulto`;
+        } else {
+            adultoounao = "Você já é um adulto.";
+        }
+       
+        document.getElementById("soun").innerText = adultoounao;
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

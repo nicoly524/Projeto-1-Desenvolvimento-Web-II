@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número digitado</title>
+</head>
+
+<body>
+
+    <h1>Número digitado</h1>
+    <br>
+    <button onclick="numeroDigitado()">Digite um número</button>
+    <br> <br>
+    <p id="nmr"></p>
+
+    <script>
+        function numeroDigitado() {
+            let numero = 0;
+            numero = parseInt(prompt("Digite um número inteiro: "));
+
+            if (isNaN(numero)) {
+                alert("Digite um número valido.");
+            }
+
+            else {
+                document.getElementById("nmr").innerText = "O número digitado foi: " + numero;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu nome</title>
+</head>
+
+<body>
+
+    <h1>Nome completo</h1>
+    <br>
+    <button onclick="mostrarNome()">Digite seu nome</button>
+    <br>
+    <p id="name"></p>
+
+    <script>
+        function mostrarNome() {
+            let nome = "";
+            nome = prompt("Digite seu nome: ");
+
+            document.getElementById("name").innerText = "O seu nome é :  " + nome + ".";
+        }
+    </script>
+
+</body>
+
+</html>

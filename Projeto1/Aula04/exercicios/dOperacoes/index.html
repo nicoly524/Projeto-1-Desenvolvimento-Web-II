@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Aritméticas</title>
+</head>
+
+<body>
+    <h1>Operações</h1>
+
+    <p id="soma"></p>
+    <p id="subtracao"></p>
+    <p id="divisao"></p>
+    <p id="multiplicacao"></p>
+
+    <script>
+        function operacoes() {
+            let numUm = parseFloat(prompt("Digite o primeiro número: "));
+            let numDois = parseFloat(prompt("Digite o segundo número: "));
+
+
+            document.getElementById("soma").innerText = `${numUm} + ${numDois} = ${numUm + numDois}`;
+            document.getElementById("subtracao").innerText = `${numUm} - ${numDois} = ${numUm - numDois}`;
+            document.getElementById("divisao").innerText = `${numUm} ÷ ${numDois} = ${(numUm / numDois).toFixed(2)}`; //pra arredondar o resultado pra duas casas decimais.
+            document.getElementById("multiplicacao").innerText = `${numUm} × ${numDois} = ${numUm * numDois}`;
+        }
+
+        window.onload = operacoes;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prioridade</title>
+</head>
+
+<body>
+    <h1>Prioridade</h1>
+    <p id="resultado"></p>
+
+    <script>
+        let resultado = "";
+
+        
+        let resum = 5.0 + 4.0 * 2.0;
+        resultado += `Operação: 5 + 4 * 2 = ${resum}\n`;
+
+        
+        let resdois = (5.0 + 4.0) * 2.0;
+        resultado += `Operação: (5 + 4) * 2 = ${resdois}\n`;
+
+        
+        let restres = 1.0 + 2.0 / 3.0 * 4.0;
+        resultado += `Operação: 1 + 2 / 3 * 4 = ${restres}\n`;
+
+        
+        let resquatro = (1.0 + 2.0) / (3.0 * 4.0);
+        resultado += `Operação: (1 + 2) / (3 * 4) = ${resquatro}\n`;
+
+        document.getElementById("resultado").innerText = resultado;
+
+
+
+
+
+    </script>
+</body>
+
+</html>
